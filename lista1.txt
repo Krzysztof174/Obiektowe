@@ -1,0 +1,81 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+class HelloWorld {
+    public static void main(String[] args) {
+        // 1
+        System.out.println("Krzysztof Osiniak");
+        // 2
+        System.out.println("Krzysztof Osiniak".length());
+        // 3
+        String ala = "Ala";
+        String ma = "ma";
+        String kota = "kota";
+        System.out.println(ala + ma + kota);
+        // 4 (1)
+        for(int i = 0; 3 > i; i++) {
+            System.out.println("  ".repeat(10) + "* ".repeat(i+1));
+        }
+        for(int i = 0; 3 > i; i++) {
+            if(i == 0 || i == 2) {
+                System.out.println("* ".repeat(14));
+                continue;
+            }
+            System.out.println("* ".repeat(15));
+        }
+        for(int i = 0; 3 > i; i++) {
+            System.out.println("  ".repeat(10) + "* ".repeat(3 - i));
+        }
+        // 4 (2)
+        for(int i = 0; 6 > i; i++) {
+            System.out.println(" ".repeat(6 - i) + "* ".repeat(i + 1));
+        }
+        for(int i = 0; 5 > i; i++) {
+            System.out.println(" ".repeat(i + 2) + "* ".repeat(5 - i));
+        }
+        // 5
+        String alaMa = "Ala ma kota";
+        System.out.println(alaMa.replaceAll("a", "c"));
+        // 6
+        System.out.println(alaMa.toLowerCase());
+        System.out.println(alaMa.toUpperCase());
+        // 7
+        System.out.println((int) 'A');
+        System.out.println((int) '!');
+        System.out.println((int) '@');
+        System.out.println((int) '>');
+        System.out.println((int) '~');
+        System.out.println((int) '\n');
+        System.out.println((int) '\b');
+        // 8
+        // 48 - 57: cyfry, 65 - 90: duze litery, 97 - 122: male litery
+        // 9
+        String s1 = "Grzesiek nie wiedzial dlaczego ... jest tak drapieznym ... mimo, ze jego ... na to nie wskazuje.";
+        s1 = s1.replaceFirst("\\.\\.\\.", "kot");
+        s1 = s1.replaceFirst("\\.\\.\\.", "zwierzakiem");
+        s1 = s1.replaceFirst("\\.\\.\\.", "wyglad");
+        System.out.println(s1);
+        // 10
+        String s2 = "... to najlepsza ksiazka napisana przez ...";
+        s2 = s2.replaceFirst("\\.\\.\\.", "katy");
+        s2 = s2.replaceFirst("\\.\\.\\.", "pitagorasa");
+        System.out.println(s2);
+        // 11
+        System.out.println("wodrze".repeat(5));
+        // 12
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd"); 
+        DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+        System.out.println("dzisiaj jest " + dtf.format(now) + " godzina " + dtf2.format(now));
+        // 13
+        System.out.println((char) 54);
+        System.out.println((char) 103);
+        System.out.println((char) 241);
+        System.out.println((char) 67);
+        System.out.println((char) 9999);
+        System.out.println((char) "Krzysztof Osiniak".length());
+        System.out.println((char) 174903);
+    }
+}
