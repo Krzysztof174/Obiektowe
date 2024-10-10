@@ -1,0 +1,55 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+
+class HelloWorld {
+    public static void main(String[] args) {
+        // 1
+        System.out.println(23.0 + 76 + ": float");
+        System.out.println(41*2.0+3 + ": float");
+        System.out.println(5-33 + ": int");
+        System.out.println(109%3 + ": int");
+        System.out.println(50/2 + ": int");
+        System.out.println(4/2 + ": int");
+        System.out.println(Math.pow(3, 5) + ": float");
+        System.out.println((7 & 9) + ": int");
+        // 2
+        System.out.println( (int) ((Math.sqrt(7) - 1) / 2 + Math.pow(3, 3)%2) );
+        System.out.println( (int) 2004/(5*6));
+        System.out.println((int) ((3 + Math.sqrt(3)) / (Math.sqrt(5)/2/3) + 1));
+        System.out.println((int) 10%3%2);
+        System.out.println((int) "Osiniak".length()%"Krzysztof".length()+1);
+        // 3
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Podaj pierwsze slowo");
+        String pierwsze = myObj.nextLine();
+        System.out.println("Podaj drugie slowo");
+        String drugie = myObj.nextLine();
+    
+        System.out.println(pierwsze + drugie);
+        // 4
+        System.out.println("Podaj pierwsza liczbe");
+        int liczba1 = myObj.nextInt();
+        System.out.println("Podaj druga liczbe");
+        int liczba2 = myObj.nextInt();
+        
+        System.out.println(liczba1 + liczba2);
+        System.out.println(liczba1 - liczba2);
+        System.out.println(liczba1 * liczba2);
+        System.out.println(liczba1 / liczba2);
+        // 5
+        System.out.println("Podaj liczbe");
+        int x = myObj.nextInt();
+        System.out.println(x+140);
+        System.out.println(x-31);
+        System.out.println(x*7);
+        System.out.println(x/13);
+        System.out.println(x%7);
+        System.out.println(x%4);
+        System.out.println(Math.pow(x, 45));
+        System.out.println(x|59);
+        System.out.println(x^23);
+        System.out.println(x<<5);
+        System.out.println(x>>6);
+    }
+}
