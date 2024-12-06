@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 
-public class Magazyn {
+interface PrzykladowyMagazyn {
+    public void wyswietlAsortyment();
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Magazyn implements PrzykladowyMagazyn {
     private ArrayList<Produkt> produkty;
     private int ilosc;
 

@@ -1,4 +1,12 @@
-public class Adres {
+interface PrzykladowyAdres {
+    public void pokaz();
+    public boolean przed(String kodPocztowy);
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Adres implements PrzykladowyAdres {
     private String ulica;
     private int numerDomu;
     private int numerMieszkania;

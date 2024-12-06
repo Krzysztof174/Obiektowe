@@ -1,7 +1,17 @@
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Klient {
+interface PrzykladowyKlient {
+    public int hashCode();
+    public void dodajZamowienie(Zamowienie zamowienie);
+    public void wyswietlHistorieZamowien();
+    public double obliczLacznyKosztZamowien();
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Klient extends Osoba implements PrzykladowyKlient {
     private String imie;
     private String nazwisko;
     private ArrayList<Zamowienie> listaZamowien;

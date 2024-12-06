@@ -1,4 +1,14 @@
-public class Zamowienie {
+interface PrzykladoweZamowienie {
+    public void ustawStatusZamowienia(String statusZamowienia);
+    public void wyswietlZamowienie();
+    public void finalizujZamowienie();
+    public void zwrocProdukt(Produkt produkt, int ilosc);
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Zamowienie implements PrzykladoweZamowienie {
     private KoszykZakupowy koszykZakupowy;
     private String statusZamowienia;
     private Platnosc platnosc;

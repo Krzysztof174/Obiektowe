@@ -1,6 +1,15 @@
 import java.util.ArrayList;
 
-public class KoszykZakupowy {
+interface PrzykladowyKoszykZakupowy {
+    public void dodajProdukt(Produkt produkt);
+    public void wyswietlZawartoscKoszyka();
+    public double obliczCalkowitaWartosc();
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class KoszykZakupowy implements PrzykladowyKoszykZakupowy {
     private ArrayList<Produkt> produkty = new ArrayList<Produkt>();
     private int ilosc;
 

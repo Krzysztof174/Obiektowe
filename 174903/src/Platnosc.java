@@ -1,6 +1,14 @@
 import java.util.Objects;
 
-public class Platnosc {
+interface PrzykladowaPlatnosc {
+    public void zaplac(double kwota, Zamowienie zamowiene);
+    public int hashCode();
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Platnosc implements PrzykladowaPlatnosc {
     @Override
     public int hashCode() {
         return Objects.hash(kwota, statusPlatnosci);

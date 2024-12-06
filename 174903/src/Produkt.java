@@ -1,6 +1,16 @@
 import java.util.Objects;
 
-public class Produkt {
+interface PrzykladowyProdukt {
+    public int hashCode();
+    public void wyswietlInformacje();
+    public void dodajDoMagazynu(int ilosc);
+    public void usunZMagazynu(int ilosc);
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Produkt implements PrzykladowyProdukt {
     private String nazwa;
     private double cena;
     private int iloscNaMagazynie;

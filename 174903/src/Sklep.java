@@ -1,7 +1,17 @@
 import java.util.ArrayList;
 import java.time.LocalDate;
 
-public class Sklep {
+interface PrzykladowySklep {
+    public void dodajProdukt(Produkt produkt);
+    public void wyswietlOferty();
+    public Produkt wyszukajProduktu(String nazwa);
+    public void zakupy(Produkt produkt, int ilosc, KoszykZakupowy koszyk);
+    default String getString() {
+        return "Łańcuch domyślny";
+    }
+}
+
+public class Sklep implements PrzykladowySklep {
     private ArrayList<Produkt> produkty;
     private String nazwaSklepu;
     private LocalDate dataPowstania;
