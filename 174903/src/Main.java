@@ -68,22 +68,21 @@ public class Main {
         }
         public static <K, V> HashMap<V, Integer> countValueOccurences(HashMap<K, V> map) {
                 HashMap<V, Integer> result = new HashMap<>();
-                for(int i = 0; i < map.size(); i++) {
-                        int occurences = 1;
-                        if(map.containsKey(map.get(i))) {
-                                occurences = result.get(map.get(i)) + 1;
-                        }
-                        result.put(map.get(i), occurences);
-                }
+                map.forEach((k, v) -> result.merge(v, 1, Integer::sum));
                 return result;
         }
         public static void main(String[] args) {
                 TreeSet<Integer> set = new TreeSet<>();
+                HashMap<Integer, Integer> map = new HashMap<>();
+                map.put(1, 1);
+                map.put(2, 2);
+                map.put(3, 2);
                 set.add(5);
                 set.add(6);
                 set.add(7);
                 set.add(8);
                 TreeSet<Integer> newSet = new TreeSet<>(findElementsInRange(set, 6, 7));
                 System.out.println(newSet);
+                System.out.println(countValueOccurences(map));
         }
 }
